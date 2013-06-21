@@ -1,4 +1,0 @@
-john,10,male
-kim,12,female
-sue,8,female
-nick,32,male
