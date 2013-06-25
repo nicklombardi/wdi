@@ -8,15 +8,30 @@ class Stock
   end
 
   def buy_shares(shares_to_buy)
-    @shares_to_buy = @number_of_shares += shares_to_buy
+    @number_of_shares += shares_to_buy
   end
 
-  def sell_shares(shares_to_sell)
-    @shares_to_sell = @number_of_shares -= shares_to_sell
+  def selling_shares(shares_to_sell)
+    if @shares_to_sell < @number_of_shares
+      @number_of_shares -= shares_to_sell
+    else
+      return false
   end
 
   def get_price(ticker)
     return YahooFinance::get_quotes(YahooFinance::StandardQuote, @ticker)[@ticker].lastTrade
+  end
+end
+
+class Portfolio
+  def initialize
+    @stocks = {}
+  end
+end
+
+class Client
+  def initialize
+    @portfolios = {}
   end
 end
 
