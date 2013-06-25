@@ -7,8 +7,12 @@ class Stock
     @number_of_shares = number_of_shares
   end
 
-  def add_shares(shares_to_add)
-    @shares_to_add = @number_of_shares + shares_to_add
+  def buy_shares(shares_to_buy)
+    @shares_to_buy = @number_of_shares += shares_to_buy
+  end
+
+  def sell_shares(shares_to_sell)
+    @shares_to_sell = @number_of_shares -= shares_to_sell
   end
 
   def get_price(ticker)
