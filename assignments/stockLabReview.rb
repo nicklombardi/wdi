@@ -7,8 +7,12 @@ class Stock
     @number_of_shares = number_of_shares
   end
 
+  def add_shares(shares_to_add)
+    @shares_to_add = @number_of_shares + shares_to_add
+  end
+
   def get_price(ticker)
-    return YahooFinance::get_quotes(YahooFinance::StandardQuote, ticker)[ticker].lastTrade
+    return YahooFinance::get_quotes(YahooFinance::StandardQuote, @ticker)[@ticker].lastTrade
   end
 end
 
