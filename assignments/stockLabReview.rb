@@ -24,12 +24,18 @@ class Stock
 end
 
 class Portfolio
+  #value
   def initialize
     @stocks = {}
+  end
+
+  def add_sharess_or_create_stock(ticker, number_of_shares)
+
   end
 end
 
 class Client
+  #cash balance
   def initialize
     @portfolios = {}
   end
